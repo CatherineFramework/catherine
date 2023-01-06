@@ -1,10 +1,7 @@
 /*
-    CyberSuki (https://github.com/cybersuki)
-    File: src/catherine.rs
-
-    Author(s): {
-        Hifumi1337 (https://github.com/Hifumi1337)
-    }
+    Project: Catherine (https://github.com/CatherineFramework)
+    Author: azazelm3dj3d (https://github.com/azazelm3dj3d)
+    License: BSD 2-Clause
 */
 
 use std::{
@@ -49,13 +46,13 @@ use mercy::{
 extern crate ipconfig;
 
 pub(crate) static NAME: &str = "Catherine";
-pub(crate) static VERSION: &str = "0.3.47";
+pub(crate) static VERSION: &str = "0.3.51";
 
-pub(crate) static NETSCAN_PATH: &str = ".catherine/catherine-modules/net/netscan/dist/netscan";
-pub(crate) static PARSER_PATH: &str = ".catherine/catherine-modules/web/web_parser/dist/parser";
-pub(crate) static REDIS_ANALYSIS_PATH: &str = ".catherine/catherine-modules/db_analysis/redis/dist/redis_db";
-pub(crate) static EXE_PATH: &str = ".catherine/catherine-modules/data/exe/dist/exe_dump";
-pub(crate) static MERCY_EXT_PATH: &str = ".catherine/catherine-modules/mercy/dist/mercy_ext";
+pub(crate) static NETSCAN_PATH: &str = "/opt/catherine/modules/net/netscan/dist/netscan";
+pub(crate) static LINK_PARSER_PATH: &str = "/opt/catherine/modules/web/parsers/dist/links";
+pub(crate) static MERCY_EXT_PATH: &str = "/opt/catherine/modules/mercy/dist/mercy_ext";
+pub(crate) static REDIS_ANALYSIS_PATH: &str = "/opt/catherine/modules/db/redis/dist/redis_analysis";
+pub(crate) static WIN_EXE_DUMP_PATH: &str = "/opt/catherine/modules/data/exe/dist/exec_dump";
 
 pub fn init(boot_msg: &str) {
 
@@ -159,16 +156,14 @@ pub fn init(boot_msg: &str) {
             },
 
             "sys_info" => {
-                println!("{}", mercy_extra("system_info", "all"));
-                println!("Internal IP Address: {}", mercy_extra("internal_ip", ""));
+                println!("{}Internal IP Address: {}\n", mercy_extra("system_info", "all"), mercy_extra("internal_ip", ""));
             },
 
             "version" => {
                 println!("\nCatherine Framework v{}", VERSION);
-                println!("Author: Hifumi (https://github.com/Hifumi1337)\n");
-                println!("Support the project!");
-                println!("GitHub Sponsors: https://github.com/sponsors/Hifumi1337");
-                println!("Patreon: https://www.patreon.com/cybersuki\n");
+                println!("Author: azazelm3dj3d (https://github.com/azazelm3dj3d)");
+                println!("GitHub Sponsors: https://github.com/sponsors/azazelm3dj3d");
+                println!("Patreon: https://www.patreon.com/azazelm3dj3d\n");
             },
 
             "help" => {
@@ -280,7 +275,7 @@ pub fn shutdown(shutdown_msg: &str) {
 
     Command::new("chmod")
             .arg("-x")
-            .args([NETSCAN_PATH, PARSER_PATH, REDIS_ANALYSIS_PATH, EXE_PATH, MERCY_EXT_PATH])
+            .args([NETSCAN_PATH, LINK_PARSER_PATH, REDIS_ANALYSIS_PATH, WIN_EXE_DUMP_PATH, MERCY_EXT_PATH])
             .output()
             .expect("Unable process module executable loop");
 

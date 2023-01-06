@@ -1,52 +1,27 @@
-<h1 align="center">
-    <img src="assets/catherine_framework_v1.png" />
-</h1>
+<div align="center">
+    <img src="assets/catherine_icon.png" width="50%" />
+</div>
 
 <h2 align="center">
-    The rusty defense framework!
+    The rusty blue team framework!
 </h2>
 
-<h3 align="center">
-📚 <a href="https://catherine-docs.hifumi1337.io/">Documentation</a>
-</h3>
+📚 [Documentation](https://docs.rs/crate/catherine/latest)
 
-<br />
+Catherine is a blue team security framework with an extensible module collection, various types of cryptographic processes, hexadecimal dumping and aggregation, and real-time database analysis. Catherine is as simple as installing via Cargo or using `git` to pull down the source code and immediately start using the framework with `cargo run`. All modules are already built and ready, correlated with the core codebase to work in unison when pulling from source. If you would like to install using Cargo, please refer to the link below.
 
-Catherine is a blue team security framework created to make retrieving data, decoding data, and overall defense operations easier. Catherine is currently in a stable beta state, offering cryptographic processes, hexadecimal data collection, real-time database analysis, and much more.
-
-Catherine does depend on custom built [modules](https://github.com/cybersuki/catherine-modules), which are not required, but recommended to enhance the tools at your disposal.
-
-Catherine is now available on Cargo! You can install the executable (+ setup the PATH) by running this command:
-```
+### Installation
+Install via Cargo:
+```bash
 cargo install catherine
 ```
 
-## Install
-Installing Catherine is easy, all you have to do is run the installer and you're good to go!
-
-First, make sure the installer is setup as an executable:
+Install via GitHub releases:
 ```bash
-chmod +x Catherine_Installer
+curl https://raw.githubusercontent.com/CatherineFramework/Catherine/install.sh | sh
 ```
 
-Now run the installation script:
-```bash
-./Catherine_Installer
-```
+NOTE: If installing from Cargo, modules are not currently included. If you would like to have access to all available modules, please follow the installation guide [here](https://github.com/CatherineFramework/Catherine/blob/main/modules/INSTALLATION.md).
 
-If you have cURL installed, feel free to run the installer this way:
-```bash
-curl https://raw.githubusercontent.com/cybersuki/catherine/main/Catherine_Installer | bash
-```
-
-Already have Catherine modules installed? Run the installer again to update the modules!
-
-## Issues
-If you are unable to run the installation script on WSL, try running these commands first:
-```bash
-chmod +x Catherine_Installer
-```
-
-```bash
-sed -i -e 's/\r$//' Catherine_Installer
-```
+## Please Read
+Catherine just entered a production (stable) state, so the documentation is currently being built to match these new changes. For now, you can get started by installing via `Cargo` and viewing the help menu within the Catherine shell. If a bug or issue is found, please report it [here](https://github.com/CatherineFramework/Catherine/issues).
